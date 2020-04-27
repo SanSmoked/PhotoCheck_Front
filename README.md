@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
-##URL of the mockup
+## URL of the mockup
 https://youtu.be/UDp2TpIbS_U
 
 ## Development server
