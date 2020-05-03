@@ -1,0 +1,11 @@
+.container {
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 90%;
+}
+
+.logo{
+   margin-top: 2%;
+   max-width: 60%;
+}
