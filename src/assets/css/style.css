@@ -1,8 +1,13 @@
-#app {
+/* #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-  }
+    
+  } */
+body {
+  background: rgb(7,0,126);
+  background: linear-gradient(90deg, rgba(7,0,126,1) 0%, rgba(0,212,255,1) 100%);
+}

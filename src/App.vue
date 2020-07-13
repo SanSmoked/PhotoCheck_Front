@@ -1,23 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to my crib :v"/>
+  <div id="app" class='container'>
+    <Login/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Login from './components/Login'
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  },
-  computed: {
-    isLoginPage () {
-      return this.$route.name ==='login'
-    }
-  },
-  
+    Login
+  }
 }
 </script>
