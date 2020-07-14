@@ -50,7 +50,6 @@ export default {
     background:rgb(92, 92, 92);
 }
 input { 
-    /* height: 30px;  */
     margin: 0px; 
     border: 0px; 
     outline: none; 
@@ -59,13 +58,4 @@ input {
     width: 100%;
     margin-bottom: 10px;
 }
-/* .divLogin{
-    background-size: cover; 
-    background-position: center center; 
-    width: 100%; 
-    height: 100vh; 
-    display: flex;
-    align-content: center;
-    align-items: center;   
-} */
 </style>
