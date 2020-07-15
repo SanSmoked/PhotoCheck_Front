@@ -1,5 +1,13 @@
 # photo-check
 
+## photo-check backend repositorie
+
+https://github.com/Gabriel120497/photocheckback
+
+## photo-check mockup video 
+
+https://youtu.be/UDp2TpIbS_U
+
 ## Project setup
 ```
 npm install

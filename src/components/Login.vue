@@ -36,6 +36,7 @@ export default {
     methods:{
         sendForm(){
             console.log(this.form);
+            this.$router.push('/home');
         }
     }
 
