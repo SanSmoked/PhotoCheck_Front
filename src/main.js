@@ -10,4 +10,12 @@ new Vue({
   store,
   router,
   render: h => h(App)
+  // mounted(){
+  //   fetch()
+  //   .then(response=>response.json())
+  //   .then(data=>{
+        
+  //   })
+
+  // }
 }).$mount('#app')
