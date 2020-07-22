@@ -1,16 +1,18 @@
 <template>
   <div>
     <div class="list-group">
-      <a v-for="patient of patients" :key="patient.CC" href="#" class="list-group-item list-group-item-action">
-        <div class="row">
-          <img :src=patient.profileImg class="imgPatient col-4"/>
-          <p class="col-8">
-            <strong>{{patient.name}}</strong>
-            <br />{{patient.age}} años
-            <br />CC:{{patient.CC}}
-          </p>
-        </div>
-      </a>
+        <a v-for="pokemon of pokemons" :key="pokemon.id" href="#" class="list-group-item list-group-item-action">
+          <div class="row">
+            <img :src="pokemon.imageUrl" class="imgPatient col-4" />
+            <p class="col-8">
+              <strong>{{pokemon.name}}</strong>
+              <br />
+              {{pokemon.height}} años
+              <br />
+              CC: {{pokemon.id}}
+            </p>
+          </div>
+        </a>
     </div>
   </div>
 </template>
@@ -22,7 +24,16 @@ import {mapState} from 'vuex';
 export default {
   name: "ListPatients",
   computed:{
-      ...mapState(['patients'])
+      ...mapState(['pokemons'])
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+  },
+  created() {
+    this.$store.commit('fetchData');
   }
 
 };
