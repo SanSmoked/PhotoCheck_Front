@@ -16,6 +16,11 @@ export default new VueRouter({
         path: '/home',
         name: 'home',
         component:() => import('./components/Home.vue')
+      },
+      {
+        path: '/patientRecord/:cc',
+        name: 'patientRecord',
+        component:() => import('./components/PatientRecord.vue')
       }
     ]
 })
