@@ -7,9 +7,9 @@
       <div class="list-group-item">
         <div class="row">
           <div class="personal-information">
-            <p class="col">Nombre: {{$route.params.cc}}</p>
-            <p class="col">Edad: {{$route.params.cc}}</p>
-            <p class="col">Cc: {{$route.params.cc}}</p>
+            <p class="col">Nombre: {{this.pokemonById($route.params.cc).name}}</p>
+            <p class="col">Edad: {{this.pokemonById($route.params.cc).id}}</p>
+            <p class="col">Cc: {{this.pokemonById($route.params.cc).id}}</p>
           </div>
           <img :src="'https://i.ytimg.com/vi/WMk_KX_x6X4/maxresdefault.jpg'" class="imgPatient" />
         </div>
@@ -26,7 +26,7 @@
             class="folder"
           />
           <p class="col-8">
-            <strong>{{patient.name}}</strong>
+            <strong>{{patient.CC}}</strong>
           </p>
         </div>
       </a>
@@ -35,12 +35,13 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "PatientRecord",
   computed: {
-    ...mapState(["patients"])
+    ...mapState(["patients"]),
+    ...mapGetters(["pokemonById"])
   },
   methods: {
     onclick(cc) {

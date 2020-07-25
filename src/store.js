@@ -31,23 +31,29 @@ export default new Vuex.Store({
                 profileImg: 'https://i.ytimg.com/vi/WMk_KX_x6X4/maxresdefault.jpg'
             }
         ],
-        pokemons:[]
+        pokemons: []
     },
     mutations: {
-        fetchData(state){
+        fetchData(state) {
             fetch("https://pokeapi.co/api/v2/pokemon")
-            .then(stream => stream.json())
-            .then(data => {
-                data.results.forEach(pokemon => {
-                let item =  {};
-                item.name = pokemon.name;
-                item.id = (pokemon.url.split('/'))[6]
-                item.imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+item.id+'.png'
-                state.pokemons.push(item);
-              })});
-          }
+                .then(stream => stream.json())
+                .then(data => {
+                    data.results.forEach(pokemon => {
+                        let item = {};
+                        item.name = pokemon.name;
+                        item.id = (pokemon.url.split('/'))[6]
+                        item.imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + item.id + '.png'
+                        state.pokemons.push(item);
+                    })
+                });
+        }
     },
     actions: {
 
+    },
+    getters: {
+        pokemonById: (state) => (id) => {
+            return state.pokemons.find(pokemon => pokemon.id == id)
+        }
     }
 })
