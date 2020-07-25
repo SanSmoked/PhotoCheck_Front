@@ -9,25 +9,20 @@
         </div>
       </div>
       <div class="card-body">
-          <ListPatients/>
+        <ListPatients />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
-import ListPatients from './ListPatients.vue'
+import ListPatients from "./ListPatients.vue";
 
 export default {
   name: "Home",
-  components:{
+  components: {
     ListPatients
-  },
-  data() {
-    return {};
-  },
-  methods: {}
+  }
 };
 </script>
 
