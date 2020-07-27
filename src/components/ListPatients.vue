@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="list-group">
-        <a v-for="pokemon of pokemons" :key="pokemon.id" v-on:click="onclick(pokemon.id)" class="list-group-item list-group-item-action">
+        <a v-for="patient of patients" :key="patient.id" v-on:click="onclick(patient.documento)" class="list-group-item list-group-item-action">
           <div class="row">
-            <img :src="pokemon.imageUrl" class="imgPatient col-4" />
+            <!--img :src="pokemon.imageUrl" class="imgPatient col-4" /-->
             <p class="col-8">
-              <strong>{{pokemon.name}}</strong>
+              <strong>Nombre: {{patient.nombre}}</strong>
               <br />
-              {{pokemon.height}} años
+              Edad: {{patient.edad}} años
               <br />
-              CC: {{pokemon.id}}
+              {{patient.type}}: {{patient.documento}}
             </p>
           </div>
         </a>
@@ -23,11 +23,7 @@ import { mapState } from "vuex";
 export default {
   name: "ListPatients",
   computed:{
-      ...mapState(['pokemons'])
-  },
-  data() {
-    return {
-    }
+      ...mapState(['patients'])
   },
   methods: {
     onclick(cc) {
@@ -36,7 +32,7 @@ export default {
     }
   },
   created() {
-    this.$store.commit('fetchData');
+    this.$store.commit('getPatients');
   }
 };
 </script>
