@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="list-group">
-        <a v-for="patient of patients" :key="patient.id" v-on:click="onclick(patient.documento)" class="list-group-item list-group-item-action">
+        <a v-for="patient of patients" :key="patient.id" v-on:click="onclick(patient.document)" class="list-group-item list-group-item-action">
           <div class="row">
-            <!--img :src="pokemon.imageUrl" class="imgPatient col-4" /-->
+            <img :src="patient.photo" class="imgPatient" />
             <p class="col-8">
-              <strong>Nombre: {{patient.nombre}}</strong>
+              <strong>Nombre: {{patient.name}}</strong>
               <br />
-              Edad: {{patient.edad}} años
+              Edad: {{patient.age}} años
               <br />
-              {{patient.type}}: {{patient.documento}}
+              {{patient.type}}: {{patient.document}}
             </p>
           </div>
         </a>
@@ -28,6 +28,7 @@ export default {
   methods: {
     onclick(cc) {
       console.log(cc);
+      this.$store.commit("getRecords");
       this.$router.push({name:'patientRecord', params:{cc}});
     }
   },
@@ -39,6 +40,8 @@ export default {
 
 <style scoped>
 .imgPatient {
-  height: 200px;
+  height: 15%;
+  width: 15%;
+  margin: auto;
 }
 </style>
