@@ -88,6 +88,7 @@ export default {
     onclick(recordId) {
       //this.getRecordsPerPatient(recordId)
       console.log(recordId);
+      this.$router.push({name:'folderLayout', params:{recordId}});
     },
     sendForm(patientId) {
       console.log(patientId);

@@ -21,6 +21,11 @@ export default new VueRouter({
         path: '/patientRecord/:cc',
         name: 'patientRecord',
         component:() => import('./components/PatientRecord.vue')
+      },
+      {
+        path: '/folderLayout/:id',
+        name: 'folderLayout',
+        component:() => import('./components/FolderLayout.vue')
       }
     ]
 })
