@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { db } from './main';
+import { db, fb } from './main';
 
 Vue.use(Vuex)
 
@@ -8,7 +8,8 @@ export default new Vuex.Store({
     state: {
         records: [],
         patients: [],
-        recordsPerPatient: []
+        recordsPerPatient: [],
+        imagesUrl: []
     },
     mutations: {
         getPatients: state => {

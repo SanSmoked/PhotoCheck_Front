@@ -7,6 +7,8 @@ import vuetify from './plugins/vuetify';
 
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/storage"
+import 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDEENfyRkHLnZ_IXjztGxdjCgLuAPMJDNA",
@@ -19,10 +21,11 @@ const firebaseConfig = {
     measurementId: "G-NXZBKH9KPB"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const fb = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 //firebase.analytics();
 
-export const db = firebase.firestore();
+export {fb, db, firebase}
 
 Vue.config.productionTip = false
 

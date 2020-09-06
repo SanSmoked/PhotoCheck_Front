@@ -80,15 +80,13 @@ export default {
         (v) => !!v || "Name is required",
         (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
       ],
-      files: [],
-      selectedImages: [],
     };
   },
   methods: {
-    onclick(recordId) {
+    onclick(id) {
       //this.getRecordsPerPatient(recordId)
-      console.log(recordId);
-      this.$router.push({name:'folderLayout', params:{recordId}});
+      console.log(id);
+      this.$router.push({name:'folderLayout', params:{id}});
     },
     sendForm(patientId) {
       console.log(patientId);
@@ -99,7 +97,6 @@ export default {
         db.collection("records").add({
           title: this.name,
           patientId: patientId,
-          images: this.files,
         });
       } else {
         console.log("todos los campos son necesarios");
